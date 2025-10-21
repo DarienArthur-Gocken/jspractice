@@ -3,8 +3,16 @@ A palindrome is a word, number, or other sequence of characters that reads the s
 */
 
 function checkPalindrome(textInput) {
-    
+    for(let i = 0; i < textInput.length / 2; i++) {
+        //has to be same back and forth. like racecar has r on both sides, a, etc.
+        let otherSideOfWord = textInput[textInput.length - 1 - i]
+        if(textInput[i] != otherSideOfWord) {
+            return false;
+        }
+    }
+    return true;
 }
+
 
 // Test for palindrome
 
@@ -12,3 +20,5 @@ let testString = "racecar"; // true
 let testString2 = "hello"; // false
 
 // TODO: display the result of the test strings in the console
+console.log(checkPalindrome(testString));
+console.log(checkPalindrome(testString2));
